@@ -1,4 +1,4 @@
-const { Ring, wait } = require('../dist/ringtail')
+const { Ring, wait, randomStr } = require('../dist/ringtail')
 
 const r1 = Ring.of({
   size: 1,
@@ -55,9 +55,11 @@ const r3 = Ring.of({
   await wait(10000)
   r2.disconnect()
   console.log('r3 start', Date.now())
+  const uid = randomStr(10)
   r3.schedule('1000')
-  r3.schedule('2000', 2000)
+  r3.schedule('2000', 2000, uid)
   r3.schedule('3000', 3000)
+  r3.cancel(uid)
 })();
 
 (async () => {

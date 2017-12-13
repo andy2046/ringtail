@@ -3,7 +3,7 @@ ringtail is a JavaScript library to make cyclic task schedule easy and efficient
 
 ## Examples
 ```js
-import { Ring, wait } from 'ringtail';
+import { Ring, wait, randomStr } from 'ringtail';
 
 const r1 = Ring.of({
   size: 1,
@@ -61,9 +61,11 @@ const r3 = Ring.of({
   await wait(10000)
   r2.disconnect()
   console.log('r3 start', Date.now())
+  const uid = randomStr(10)
   r3.schedule('1000')
-  r3.schedule('2000', 2000)
+  r3.schedule('2000', 2000, uid)
   r3.schedule('3000', 3000)
+  r3.cancel(uid)
 })();
 
 // r1 start 1513089*739*966
@@ -76,7 +78,6 @@ const r3 = Ring.of({
 // r2: 3000 1513089*746*996
 // r3 start 1513089*747*964
 // r3: 1000 1513089*749*001
-// r3: 2000 1513089*750*002
 // r3: 3000 1513089*751*008
 
 ```
@@ -91,8 +92,8 @@ npm install --save ringtail
 You can import from `ringtail`:
 
 ```js
-import { Ring, wait } from 'ringtail';
+import { Ring, wait, randomStr } from 'ringtail';
 // or
-const { Ring, wait } = require('ringtail');
+const { Ring, wait, randomStr } = require('ringtail');
 ```
 

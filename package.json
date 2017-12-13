@@ -1,6 +1,6 @@
 {
   "name": "ringtail",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "interval ring for cyclic schedule task",
   "main": "dist/ringtail.js",
   "module": "src/index.js",
