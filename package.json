@@ -1,6 +1,6 @@
 {
   "name": "ringtail",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "interval ring for cyclic schedule task",
   "main": "dist/ringtail.js",
   "module": "src/index.js",
@@ -45,7 +45,7 @@
     "eslint-plugin-promise": "3.5.0",
     "eslint-plugin-standard": "3.0.1",
     "eslint-watch": "3.1.0",
-    "uglifyjs-webpack-plugin": "1.1.2",
+    "uglifyjs-webpack-plugin": "1.2.3",
     "webpack": "3.5.5"
   },
   "bugs": {
